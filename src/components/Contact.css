@@ -1,0 +1,140 @@
+.contact {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Two-column layout ── */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: start;
+  max-width: 1100px;
+}
+
+/* ── Left: CTA ── */
+.contact-cta-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.contact-cta-heading span {
+  color: var(--accent);
+}
+
+.contact-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 460px;
+}
+
+/* ── Email CTA button ── */
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 16px 28px;
+  border: 1px solid rgba(79, 255, 176, 0.25);
+  border-radius: var(--r-sm);
+  background: rgba(79, 255, 176, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  word-break: break-all;
+}
+
+.contact-email-btn:hover {
+  background: rgba(79, 255, 176, 0.1);
+  box-shadow: 0 0 40px rgba(79, 255, 176, 0.12);
+}
+
+/* ── Right: Social links ── */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.social-link:hover {
+  border-color: var(--border2);
+  transform: translateX(6px);
+}
+
+/* ── Icon box ── */
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-icon.github   { background: rgba(255, 255, 255, 0.06); }
+.social-icon.linkedin { background: rgba(0, 119, 181, 0.15); }
+.social-icon.portfolio { background: rgba(79, 255, 176, 0.1); }
+
+.social-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.social-info strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.social-info span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* ── Arrow ── */
+.social-arrow {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover .social-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 820px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
