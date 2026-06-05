@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Shubham_Portfolio/static/css/main.8ada9e30.css",
+    "main.css": "/Shubham_Portfolio/static/css/main.619406f8.css",
     "main.js": "/Shubham_Portfolio/static/js/main.a62d9295.js",
     "index.html": "/Shubham_Portfolio/index.html",
-    "main.8ada9e30.css.map": "/Shubham_Portfolio/static/css/main.8ada9e30.css.map",
+    "main.619406f8.css.map": "/Shubham_Portfolio/static/css/main.619406f8.css.map",
     "main.a62d9295.js.map": "/Shubham_Portfolio/static/js/main.a62d9295.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ada9e30.css",
+    "static/css/main.619406f8.css",
     "static/js/main.a62d9295.js"
   ]
 }
