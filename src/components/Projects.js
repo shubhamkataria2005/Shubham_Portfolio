@@ -69,6 +69,22 @@ const projects = [
     githubUrl: "https://github.com/shubhamkataria2005",
   },
   {
+    tags: [
+      { label: "Business Website", cls: "tag-web" },
+      { label: "Azure Cloud", cls: "tag-ml" },
+    ],
+    title: "Bhavishya Oil — Business Platform",
+    description:
+      "Full-stack business platform for Bhavishya® Kachi Ghani Mustard Oil (Surender Kala & Sons Pvt. Ltd.). Features a product catalogue for retail (200ml–2L) and wholesale (15L/15kg tin) orders, a distributor enquiry system, real-time admin messaging via WebSocket, JWT-secured admin dashboard with order management and live stats, and an AI chat assistant powered by OpenAI with a RAG knowledge base. Spring Boot backend deployed to Azure App Service via Docker and Azure Container Registry with a fully automated GitHub Actions CI/CD pipeline.",
+    stack: [
+      "React", "Spring Boot 3.1.5", "Python Flask", "PostgreSQL",
+      "Azure App Service", "Azure Container Registry", "Docker",
+      "GitHub Actions", "JWT Auth", "WebSocket (STOMP)", "OpenAI RAG",
+    ],
+    liveUrl: "https://bhavishya-frontend.onrender.com",
+    githubUrl: null,
+  },
+  {
     tags: [{ label: "AI Platform", cls: "tag-ai" }],
     title: "Shubham AI Studio",
     description:
