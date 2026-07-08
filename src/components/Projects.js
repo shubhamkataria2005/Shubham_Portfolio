@@ -85,15 +85,6 @@ const projects = [
     githubUrl: null,
   },
   {
-    tags: [{ label: "AI Platform", cls: "tag-ai" }],
-    title: "Shubham AI Studio",
-    description:
-      "All-in-one AI platform featuring an intelligent chatbot backed by OpenAI, plus six ML tools for real-world tasks. Built end-to-end from a React frontend to a Java Spring Boot backend with PostgreSQL persistence.",
-    stack: ["React", "Spring Boot", "OpenAI API", "PostgreSQL", "Machine Learning"],
-    liveUrl: "https://shubham-ai-chatbot.netlify.app/",
-    githubUrl: null,
-  },
-  {
     tags: [{ label: "Web App", cls: "tag-web" }],
     title: "Preloved Product Marketplace",
     description:
