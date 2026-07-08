@@ -26,13 +26,18 @@ function About() {
             it.
           </p>
           <p>
-            My latest project is <strong>FieldFlow</strong> — a live SaaS platform
-            for NZ trades businesses at{" "}
+            My flagship project is <strong>FieldFlow</strong> — a live B2B SaaS for NZ
+            trades businesses at{" "}
             <a href="https://fieldflow.shubhamkataria.com" target="_blank" rel="noreferrer" style={{color:"var(--accent)"}}>fieldflow.shubhamkataria.com</a>.
-            It's built on <strong>AWS</strong> (Elastic Beanstalk, RDS, S3, CloudFront)
-            with Xero OAuth2, Stripe billing, real-time WebSocket messaging, and a PWA
-            for mobile install. I've also shipped an AI car dealership platform with
-            TensorFlow, OpenAI, and a Random Forest valuator trained on 92,661 records.
+            It runs on <strong>AWS</strong> (Elastic Beanstalk, RDS, S3, CloudFront),
+            integrates <strong>Xero OAuth2</strong> for accounting, <strong>Stripe</strong> for
+            subscription billing, <strong>OpenAI + Pinecone RAG</strong> for AI insights,
+            WebSocket real-time dispatch, PDF invoicing/quoting, and is installable as a PWA.
+          </p>
+          <p>
+            I've also shipped an AI car dealership platform with a <strong>TensorFlow CNN</strong> car
+            recogniser, a <strong>Random Forest</strong> trade-in valuator trained on 92,661 records
+            at 93% accuracy, and a RAG chatbot — all deployed on AWS with full GitHub Actions CI/CD.
           </p>
           <p>
             My goal is to become a software engineer at the frontier of

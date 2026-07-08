@@ -3,24 +3,68 @@ import "./Awards.css";
 
 const awards = [
   {
+    icon: "☁️",
+    org: "Amazon Web Services",
+    title: "AWS Academy Graduate — Cloud Foundations",
+    year: "December 2025",
+    description:
+      "Completed the AWS Academy Cloud Foundations course covering AWS Architecture, core services, pricing, and support. Applied directly to production deployments across EC2, RDS, S3, CloudFront, IAM, and ACM.",
+    certificateUrl: "https://www.credly.com/badges/138dcb38-25b3-41b9-9942-fefa6396c47a",
+  },
+  {
+    icon: "🚀",
+    org: "Self-Initiated Project",
+    title: "FieldFlow — Production SaaS Launch",
+    year: "2026",
+    description:
+      "Independently built and launched FieldFlow, a live B2B SaaS platform for NZ trades businesses. Full AWS stack (Elastic Beanstalk, RDS, S3, CloudFront), Xero OAuth2 accounting integration, Stripe subscription billing, Pinecone RAG AI, WebSocket real-time messaging, PWA, and fully automated GitHub Actions CI/CD.",
+    certificateUrl: null,
+  },
+  {
+    icon: "🌐",
+    org: "Self-Initiated Project",
+    title: "Production AWS Infrastructure Deployment",
+    year: "2025",
+    description:
+      "Independently architected and deployed a full production AWS stack — EC2 via Elastic Beanstalk, RDS PostgreSQL, S3 + CloudFront with custom SSL via ACM, IAM roles, and a fully automated GitHub Actions CI/CD pipeline for both frontend and backend.",
+    certificateUrl: null,
+  },
+  {
     icon: "🎓",
     org: "Udemy",
     title: "Machine Learning A-Z™: Hands-On Python & R In Data Science",
     year: "2025",
     description:
-      "Comprehensive machine learning course covering Python, R, and key ML algorithms including regression, classification, clustering, deep learning, and NLP.",
-    certificateUrl:
-      "https://udemy-certificate.s3.amazonaws.com/image/UC-434598af-1700-443a-b661-c25bc5043b5b.jpg",
+      "Comprehensive ML course covering regression, classification, clustering, deep learning, and NLP in Python and R. Applied knowledge to build TensorFlow CNN and Random Forest models used in production.",
+    certificateUrl: "https://udemy-certificate.s3.amazonaws.com/image/UC-434598af-1700-443a-b661-c25bc5043b5b.jpg",
   },
-  // Add more awards here as you earn them:
-  // {
-  //   icon: "🏆",
-  //   org: "Organisation Name",
-  //   title: "Award or Certificate Title",
-  //   year: "2025",
-  //   description: "Brief description of what this award/certificate represents.",
-  //   certificateUrl: "https://...",
-  // },
+  {
+    icon: "🐳",
+    org: "Microsoft Azure",
+    title: "Production Deployment on Azure App Service",
+    year: "2025",
+    description:
+      "Architected and deployed a Spring Boot backend on Azure App Service using Docker, Azure Container Registry, and a GitHub Actions CI/CD pipeline. Live at bhavishya-frontend.onrender.com.",
+    certificateUrl: null,
+  },
+  {
+    icon: "🤖",
+    org: "Hugging Face",
+    title: "ML Models Deployed on Hugging Face Spaces",
+    year: "2025",
+    description:
+      "Deployed TensorFlow CNN car brand recogniser and Random Forest trade-in valuator (trained on 92,661 records at 93% accuracy) as live ML APIs on Hugging Face Spaces, serving predictions in production.",
+    certificateUrl: null,
+  },
+  {
+    icon: "🏆",
+    org: "Otago Polytechnic Auckland",
+    title: "Bachelor of Information Technology — Year 3",
+    year: "2023 – Present",
+    description:
+      "Specialising in AI and software development. Consistently applying academic knowledge to real production systems — from AWS-deployed SaaS platforms to ML pipelines and cloud infrastructure.",
+    certificateUrl: null,
+  },
 ];
 
 const ArrowIcon = () => (

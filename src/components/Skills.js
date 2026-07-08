@@ -5,32 +5,42 @@ const skillCategories = [
   {
     icon: "💻",
     label: "Languages",
-    skills: ["Python", "Java", "JavaScript", "C#", "SQL"],
+    skills: ["Python", "Java", "JavaScript", "C#", "SQL", "R"],
   },
   {
     icon: "🎨",
     label: "Frontend",
-    skills: ["React", "HTML & CSS", "Vite", "React Router", "Responsive Design"],
+    skills: ["React 19", "Vite", "React Router", "HTML & CSS", "Framer Motion", "WebSocket (SockJS/STOMP)", "PWA", "Responsive Design"],
   },
   {
     icon: "⚙️",
     label: "Backend & Databases",
-    skills: ["Spring Boot", "Node.js", "PostgreSQL", "MySQL", "Firebase"],
+    skills: ["Spring Boot 3", "Spring Security", "Spring WebFlux", "Node.js", "PostgreSQL", "MySQL", "Firebase", "JWT Auth", "REST API"],
   },
   {
     icon: "🤖",
     label: "AI & Machine Learning",
-    skills: ["TensorFlow", "scikit-learn", "OpenAI API", "Flask", "Pandas", "NumPy"],
+    skills: ["TensorFlow / Keras", "scikit-learn", "OpenAI GPT-4o-mini", "Pinecone (RAG)", "CNN", "Random Forest", "NLP", "Flask", "Pandas", "NumPy"],
   },
   {
-    icon: "🚀",
-    label: "DevOps & Tools",
-    skills: ["GitHub", "Git LFS", "Render", "Netlify", "REST API", "WebSocket"],
+    icon: "☁️",
+    label: "Cloud — AWS",
+    skills: ["EC2", "Elastic Beanstalk", "RDS (PostgreSQL)", "S3", "CloudFront", "IAM", "ACM (SSL)", "CloudWatch", "VPC & Security Groups"],
+  },
+  {
+    icon: "🌐",
+    label: "Cloud — Azure & DevOps",
+    skills: ["Azure App Service", "Azure Container Registry", "Docker", "GitHub Actions CI/CD", "Render", "Netlify", "Git LFS"],
+  },
+  {
+    icon: "🔗",
+    label: "Integrations",
+    skills: ["Xero OAuth2 API", "Stripe Payments", "Brevo SMTP", "OpenPDF", "Hugging Face Spaces"],
   },
   {
     icon: "🧠",
-    label: "Concepts",
-    skills: ["Data Structures", "Algorithms", "JWT Auth", "Spring Security", "STOMP / SockJS"],
+    label: "Concepts & Architecture",
+    skills: ["Multi-Tenant SaaS", "Multi-Role Auth", "Real-Time Messaging", "Microservices", "OOP", "System Design", "Data Structures & Algorithms"],
   },
 ];
 

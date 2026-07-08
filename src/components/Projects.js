@@ -39,11 +39,12 @@ const projects = [
     ],
     title: "FieldFlow — Field Service Management SaaS",
     description:
-      "Production SaaS platform for trades businesses (plumbers, electricians, HVAC). Managers schedule and dispatch jobs, technicians get a mobile portal, and customers track progress in real time via a unique link. Features Xero accounting OAuth2 integration, Stripe subscription billing, AI job insights via OpenAI, automated emails via Brevo, WebSocket live messaging, and a PWA for home-screen installation. Frontend on AWS S3 + CloudFront, backend on Elastic Beanstalk (EC2), database on RDS PostgreSQL — fully automated CI/CD via GitHub Actions.",
+      "Production B2B SaaS for NZ trades businesses (plumbers, electricians, HVAC). Managers get a real-time dispatch board with drag-and-drop scheduling; technicians get a dedicated mobile portal for one-tap job updates; customers track progress live via a unique link. Integrates Xero OAuth2 (auto-syncs invoices & contacts with token rotation), Stripe subscription billing (Starter / Pro / Business tiers with webhook enforcement), OpenAI GPT-4o-mini with Pinecone RAG for AI job insights, and Brevo SMTP for automated job-status emails. Generates GST-inclusive branded PDFs for invoices and quotes. PWA-enabled for home-screen installation. Frontend on AWS S3 + CloudFront, backend on Elastic Beanstalk (EC2), database on RDS PostgreSQL — fully automated CI/CD via GitHub Actions.",
     stack: [
-      "React", "Spring Boot", "AWS S3", "AWS CloudFront",
-      "AWS Elastic Beanstalk", "AWS RDS", "Xero API",
-      "Stripe", "OpenAI API", "WebSocket", "PWA", "GitHub Actions",
+      "React 19", "Spring Boot 3.1.5", "AWS S3", "AWS CloudFront",
+      "AWS Elastic Beanstalk", "AWS RDS (PostgreSQL)",
+      "Xero OAuth2", "Stripe", "OpenAI GPT-4o-mini", "Pinecone RAG",
+      "WebSocket (STOMP)", "OpenPDF", "PWA", "GitHub Actions",
     ],
     liveUrl: "https://fieldflow.shubhamkataria.com",
     githubUrl: "https://github.com/shubhamkataria2005",
@@ -53,16 +54,18 @@ const projects = [
     tags: [
       { label: "AI Platform", cls: "tag-ai" },
       { label: "Machine Learning", cls: "tag-ml" },
+      { label: "AWS Cloud", cls: "tag-new" },
     ],
     title: "AI Car Dealership Platform",
     description:
-      "A production-grade dual-platform marketplace — private seller marketplace meets managed dealership inventory. Features a live OpenAI-powered chatbot, TensorFlow CNN car brand recogniser (10 brands), Random Forest trade-in valuator trained on 92,661 records at 93% accuracy, real-time buyer–seller messaging via WebSocket, full purchase & payment flow, and a multi-role admin panel (User / Sales / Admin / Super Admin).",
+      "Production-grade dual-platform marketplace on AWS — private seller listings meet managed dealership inventory. Features a RAG-powered OpenAI chatbot (GPT-4o-mini + Pinecone), TensorFlow CNN car brand recogniser (10 brands, 150×150px input), Random Forest trade-in valuator trained on 92,661 NZ auto records at 93% accuracy, real-time buyer–seller WebSocket messaging, service appointments, test drive booking, and a multi-role admin panel (Customer / Sales / Admin / Super Admin). ML models deployed as Flask APIs on Hugging Face Spaces and Render. Backend on Elastic Beanstalk (EC2), RDS PostgreSQL, S3 + CloudFront with ACM SSL.",
     stack: [
-      "React 19", "Spring Boot", "PostgreSQL", "TensorFlow",
-      "scikit-learn", "OpenAI API", "WebSocket", "JWT Auth",
-      "Python Flask", "Render",
+      "React 19", "Spring Boot 3.1.5", "AWS EC2", "AWS RDS", "AWS S3",
+      "AWS CloudFront", "AWS ACM", "TensorFlow / Keras",
+      "scikit-learn", "OpenAI GPT-4o-mini", "Pinecone RAG",
+      "Python Flask", "WebSocket", "GitHub Actions",
     ],
-    liveUrl: "https://ai-car-dealership-frontend.onrender.com",
+    liveUrl: "https://dealership.shubhamkataria.com",
     githubUrl: "https://github.com/shubhamkataria2005",
   },
   {

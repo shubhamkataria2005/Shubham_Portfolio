@@ -52,7 +52,7 @@ function Home() {
         <div className="hero-stats">
           <div className="stat-block">
             <div className="stat-num">
-              5<span>+</span>
+              6<span>+</span>
             </div>
             <div className="stat-label">Projects Deployed</div>
           </div>
@@ -64,7 +64,7 @@ function Home() {
           </div>
           <div className="stat-block">
             <div className="stat-num">
-              15<span>+</span>
+              20<span>+</span>
             </div>
             <div className="stat-label">Technologies</div>
           </div>
