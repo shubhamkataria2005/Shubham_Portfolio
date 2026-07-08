@@ -33,9 +33,26 @@ const projects = [
   {
     featured: true,
     tags: [
+      { label: "SaaS Product", cls: "tag-ai" },
+      { label: "AWS Cloud", cls: "tag-ml" },
+      { label: "★ Featured", cls: "tag-new" },
+    ],
+    title: "FieldFlow — Field Service Management SaaS",
+    description:
+      "Production SaaS platform for trades businesses (plumbers, electricians, HVAC). Managers schedule and dispatch jobs, technicians get a mobile portal, and customers track progress in real time via a unique link. Features Xero accounting OAuth2 integration, Stripe subscription billing, AI job insights via OpenAI, automated emails via Brevo, WebSocket live messaging, and a PWA for home-screen installation. Frontend on AWS S3 + CloudFront, backend on Elastic Beanstalk (EC2), database on RDS PostgreSQL — fully automated CI/CD via GitHub Actions.",
+    stack: [
+      "React", "Spring Boot", "AWS S3", "AWS CloudFront",
+      "AWS Elastic Beanstalk", "AWS RDS", "Xero API",
+      "Stripe", "OpenAI API", "WebSocket", "PWA", "GitHub Actions",
+    ],
+    liveUrl: "https://fieldflow.shubhamkataria.com",
+    githubUrl: "https://github.com/shubhamkataria2005",
+  },
+  {
+    featured: false,
+    tags: [
       { label: "AI Platform", cls: "tag-ai" },
       { label: "Machine Learning", cls: "tag-ml" },
-      { label: "★ Featured", cls: "tag-new" },
     ],
     title: "AI Car Dealership Platform",
     description:

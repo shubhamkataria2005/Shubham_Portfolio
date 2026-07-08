@@ -40,7 +40,7 @@ const socialLinks = [
     sub: "shubham-kataria-2005-",
   },
   {
-    href: "https://shubhamkataria2005.github.io/Shubham_Portfolio",
+    href: "https://fieldflow.shubhamkataria.com",
     iconClass: "portfolio",
     icon: (
       <svg
@@ -55,8 +55,8 @@ const socialLinks = [
         <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
       </svg>
     ),
-    label: "Portfolio",
-    sub: "shubhamkataria2005.github.io",
+    label: "FieldFlow",
+    sub: "fieldflow.shubhamkataria.com",
   },
 ];
 

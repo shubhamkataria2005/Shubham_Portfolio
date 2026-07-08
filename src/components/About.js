@@ -1,8 +1,6 @@
 import React from "react";
 import "./About.css";
-
-// If you have a profile photo, import it like:
-// import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.jpg";
 
 function About() {
   return (
@@ -10,22 +8,7 @@ function About() {
       <div className="about-grid reveal">
         {/* Image */}
         <div className="about-img-wrap">
-          {/* Replace the placeholder below with:
-              <img src={profile} alt="Shubham Kataria" />
-              once you have the image in src/assets/ */}
-          <div className="about-img-placeholder">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="0.8"
-            >
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-            </svg>
-          </div>
+          <img src={profile} alt="Shubham Kataria" />
         </div>
 
         {/* Content */}
@@ -43,12 +26,13 @@ function About() {
             it.
           </p>
           <p>
-            My projects span production-grade{" "}
-            <strong>Spring Boot APIs</strong>,{" "}
-            <strong>React frontends</strong>, custom{" "}
-            <strong>ML pipelines</strong> in Python, and{" "}
-            <strong>deployed cloud microservices</strong> — all engineered for
-            real-world scale, not just coursework.
+            My latest project is <strong>FieldFlow</strong> — a live SaaS platform
+            for NZ trades businesses at{" "}
+            <a href="https://fieldflow.shubhamkataria.com" target="_blank" rel="noreferrer" style={{color:"var(--accent)"}}>fieldflow.shubhamkataria.com</a>.
+            It's built on <strong>AWS</strong> (Elastic Beanstalk, RDS, S3, CloudFront)
+            with Xero OAuth2, Stripe billing, real-time WebSocket messaging, and a PWA
+            for mobile install. I've also shipped an AI car dealership platform with
+            TensorFlow, OpenAI, and a Random Forest valuator trained on 92,661 records.
           </p>
           <p>
             My goal is to become a software engineer at the frontier of
