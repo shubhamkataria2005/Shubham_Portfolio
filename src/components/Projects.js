@@ -70,6 +70,22 @@ const projects = [
   },
   {
     tags: [
+      { label: "Client Work", cls: "tag-web" },
+      { label: "Local SEO", cls: "tag-ml" },
+    ],
+    title: "First Step Renovations — Business Website",
+    description:
+      "Marketing site for a Palmerston North renovation company, built and shipped end to end. Static React/Vite on Netlify with no backend — enquiries post to Web3Forms and land directly in the owner's inbox, with client-side validation, send/error states and a hidden spam trap. Custom .co.nz domain with automatic HTTPS and every URL variant 301'd to a single canonical address. Local search handled properly: LocalBusiness structured data carrying the address, phone and opening hours, plus sitemap, robots.txt and Open Graph tags all generated at build time from one content file, so the markup can never drift from the page. Every foreground/background pair contrast-checked to WCAG AA, and a sticky call bar on mobile because most visitors arrive on a phone wanting to ring someone.",
+    stack: [
+      "React 19", "Vite 8", "Netlify", "Web3Forms",
+      "Schema.org JSON-LD", "Google Search Console",
+      "CSS Custom Properties", "GitHub CI/CD",
+    ],
+    liveUrl: "https://firststeprenovations.co.nz",
+    githubUrl: null,
+  },
+  {
+    tags: [
       { label: "Business Website", cls: "tag-web" },
       { label: "Azure Cloud", cls: "tag-ml" },
     ],
@@ -92,16 +108,6 @@ const projects = [
     stack: ["React", "Node.js", "Firebase"],
     liveUrl: "https://preloved-54326--pr42-feature-guest-browsi-ne3jioro.web.app/",
     githubUrl: null,
-  },
-  {
-    tags: [{ label: "Desktop App", cls: "tag-web" }],
-    title: "Tutor Booking System",
-    description:
-      "C# .NET desktop application managing tutor–student scheduling, appointment tracking, and availability management with a MySQL relational database backend.",
-    stack: ["C#", ".NET", "MySQL"],
-    liveUrl: null,
-    githubUrl: null,
-    note: "Private repository",
   },
 ];
 
