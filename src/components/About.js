@@ -26,6 +26,13 @@ function About() {
             it.
           </p>
           <p>
+            I'm currently a <strong>Full Stack Software Engineer Intern at AI Sentinels</strong>,
+            and I've delivered production websites for paying clients in New Zealand and
+            India — most recently{" "}
+            <a href="https://firststeprenovations.co.nz" target="_blank" rel="noreferrer" style={{color:"var(--accent)"}}>firststeprenovations.co.nz</a>{" "}
+            for a renovation business in Palmerston North.
+          </p>
+          <p>
             My flagship project is <strong>FieldFlow</strong> — a live B2B SaaS for NZ
             trades businesses at{" "}
             <a href="https://fieldflow.shubhamkataria.com" target="_blank" rel="noreferrer" style={{color:"var(--accent)"}}>fieldflow.shubhamkataria.com</a>.
