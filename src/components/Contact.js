@@ -10,6 +10,7 @@ const ArrowIcon = () => (
     stroke="currentColor"
     strokeWidth="2.5"
     className="social-arrow"
+    aria-hidden="true"
   >
     <path d="M5 12h14M12 5l7 7-7 7" />
   </svg>
@@ -40,7 +41,7 @@ const socialLinks = [
     sub: "shubham-kataria-2005-",
   },
   {
-    href: "https://fieldflow.shubhamkataria.com",
+    href: "https://servicecrown.co.nz",
     iconClass: "portfolio",
     icon: (
       <svg
@@ -55,8 +56,8 @@ const socialLinks = [
         <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
       </svg>
     ),
-    label: "FieldFlow",
-    sub: "fieldflow.shubhamkataria.com",
+    label: "ServiceCrown",
+    sub: "servicecrown.co.nz",
   },
 ];
 
@@ -75,9 +76,12 @@ function Contact() {
             together.
           </h2>
           <p className="contact-sub">
-            I'm open to internship opportunities, graduate roles, and
-            interesting project collaborations. Drop me an email — I respond
-            within 24 hours.
+            I'm looking for graduate and junior software engineering roles in
+            New Zealand — backend or full-stack — where I can learn from an
+            experienced team and keep shipping production software.
+          </p>
+          <p className="contact-sub">
+            Email is the best way to reach me. I respond within 24 hours.
           </p>
           <a
             href="mailto:katariashubham0101@gmail.com"
@@ -90,6 +94,7 @@ function Contact() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              aria-hidden="true"
             >
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
@@ -108,12 +113,13 @@ function Contact() {
               rel="noreferrer"
               className="social-link"
             >
-              <div className={`social-icon ${s.iconClass}`}>{s.icon}</div>
+              <div className={`social-icon ${s.iconClass}`} aria-hidden="true">{s.icon}</div>
               <div className="social-info">
                 <strong>{s.label}</strong>
                 <span>{s.sub}</span>
               </div>
               <ArrowIcon />
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
           ))}
         </div>

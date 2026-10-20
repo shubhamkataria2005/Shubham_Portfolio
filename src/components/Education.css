@@ -1,0 +1,25 @@
+.education { background: var(--bg2); border-top: 1px solid var(--border); }
+
+.edu-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px; align-items: start; }
+.edu-certs { display: flex; flex-direction: column; gap: 20px; }
+
+.edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 30px 32px; display: flex; flex-direction: column; gap: 6px; }
+.edu-degree { border-color: rgba(79,70,229,0.22); box-shadow: 0 12px 40px rgba(79,70,229,0.06); }
+
+.edu-kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.edu-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; color: var(--text); }
+.edu-title-sm { font-size: 1.15rem; }
+.edu-org { font-size: 0.95rem; font-weight: 600; color: var(--accent); }
+.edu-date { font-size: 0.88rem; font-weight: 600; color: var(--text2); }
+.edu-desc { font-size: 0.93rem; color: var(--muted); line-height: 1.7; margin-top: 4px; }
+
+.edu-link { display: inline-flex; align-items: center; gap: 6px; width: fit-content; margin-top: 8px; font-size: 0.88rem; font-weight: 600; color: var(--accent); transition: gap 0.2s; }
+.edu-link:hover { gap: 10px; text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .edu-card { padding: 24px 20px; }
+}
