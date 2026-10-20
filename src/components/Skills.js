@@ -16,7 +16,7 @@ const skillTiers = [
       { label: "Data", skills: ["PostgreSQL", "Flyway"] },
       { label: "Testing", skills: ["JUnit", "Mockito", "Testcontainers", "pytest", "React Testing Library"] },
       { label: "Cloud & delivery", skills: ["AWS (Elastic Beanstalk, RDS, S3, CloudFront)", "GitHub Actions", "Git & GitHub"] },
-      { label: "APIs", skills: ["Stripe", "OpenAI API", "OpenRouter"] },
+      { label: "APIs", skills: ["Stripe", "OpenAI API"] },
     ],
   },
   {

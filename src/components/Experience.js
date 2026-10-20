@@ -3,9 +3,10 @@ import "./Experience.css";
 
 const SHOW_TODOS = process.env.NODE_ENV !== "production";
 
-// Points come from an audit of my internship contributions (git history,
-// merged pull requests and source). Title, dates and "Remote" come from the
-// CV. Keep internal project names, clients and implementation details out.
+// Title, dates and remote arrangement are confirmed. The description is
+// deliberately high-level (role, technologies, API work, testing, teamwork)
+// until publishing more detail about the internship is approved: no product
+// domain, implementation methods, vendors or contribution counts.
 const roles = [
   {
     title: "Full Stack Software Engineer Intern",
@@ -13,14 +14,14 @@ const roles = [
     meta: "Auckland, NZ · Remote",
     dates: "Aug 2026 – Present",
     summary:
-      "Backend development in Python and FastAPI on an AI-assisted platform for processing financial documents.",
+      "Backend-focused internship, building Python and FastAPI services in a remote engineering team.",
     points: [
-      "Added 11 REST API endpoints in FastAPI with typed Pydantic contracts for invoice processing, including per-field human review, reconciliation, duplicate detection and Excel export of reviewed values.",
-      "Built OCR and multi-model AI extraction with a consensus check: when results disagree a third reader is consulted, and uncertain financial values are flagged for human review instead of being guessed.",
-      "Built tax-document indexing with per-field evidence scoring and plain-language explanations for reviewers, evaluated against accountant-annotated reference documents.",
-      "Traced slow API requests to repeated reloads of a large PostgreSQL JSONB snapshot and added revision-checked caching. Backed my changes with pytest regression tests and shipped them through 21 merged pull requests with senior-engineer code review.",
+      "Develop REST API endpoints in Python and FastAPI with typed Pydantic models, input validation and clear error handling.",
+      "Integrate AI model APIs and PostgreSQL data access into backend services, with attention to correctness and failure handling.",
+      "Write automated pytest tests, including regression tests, and investigate and fix backend performance and reliability issues.",
+      "Deliver changes through pull requests and code review as part of a remote team.",
     ],
-    stack: ["Python", "FastAPI", "Pydantic", "PostgreSQL", "pytest", "OCR", "OpenRouter"],
+    stack: ["Python", "FastAPI", "Pydantic", "PostgreSQL", "pytest", "REST APIs"],
   },
 ];
 

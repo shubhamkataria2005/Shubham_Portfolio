@@ -65,11 +65,12 @@ function Home() {
           </ul>
 
           <p className="hero-intro">
-            I build backend and full-stack software in Java and Python. I'm
-            interning at AI Sentinels, building Python and FastAPI services for
-            AI-assisted document processing, and I'm the sole developer on
-            ServiceCrown, a live field-service management SaaS for New Zealand
-            trade businesses built with Spring Boot, React, PostgreSQL and AWS.
+            I build backend and full-stack software in Java and Python. I'm a
+            Full Stack Software Engineer Intern at AI Sentinels, focused on
+            backend development in Python and FastAPI, and I'm the sole
+            developer on ServiceCrown, a live field-service management SaaS for
+            New Zealand trade businesses built with Spring Boot, React,
+            PostgreSQL and AWS.
           </p>
 
           <dl className="hero-facts">

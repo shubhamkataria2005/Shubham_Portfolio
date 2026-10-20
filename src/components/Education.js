@@ -6,14 +6,15 @@ const SHOW_TODOS = process.env.NODE_ENV !== "production";
 const degree = {
   title: "Bachelor of Information Technology",
   org: "Otago Polytechnic Auckland",
-  date: "Expected graduation: December 2026",
+  date: "2024 – Expected December 2026",
   description: "Final-year student, expecting to complete the degree in December 2026.",
   todo:
-    "Confirm the start year (the old site said 2023, the CV says 2024) and add 3–5 relevant papers from your transcript, e.g. software engineering, databases, cloud.",
+    "Optionally add 3–5 relevant papers from your transcript, e.g. software engineering, databases, cloud.",
 };
 
 const certifications = [
   {
+    kind: "Training badge",
     title: "AWS Academy Graduate — Cloud Foundations",
     org: "AWS Academy",
     date: "Completed December 2025",
@@ -25,6 +26,7 @@ const certifications = [
     },
   },
   {
+    kind: "Course certificate",
     title: "Machine Learning A-Z: AI, Python & R + ChatGPT Prize [2025]",
     org: "Udemy",
     date: "Completed November 2025",
@@ -65,7 +67,7 @@ function Education() {
         <div className="edu-certs">
           {certifications.map((c, i) => (
             <article key={c.title} className={`edu-card reveal${i ? " reveal-delay-1" : ""}`}>
-              <p className="edu-kicker">Course certificate</p>
+              <p className="edu-kicker">{c.kind}</p>
               <h3 className="edu-title edu-title-sm">{c.title}</h3>
               <p className="edu-org">{c.org}</p>
               <p className="edu-date">{c.date}</p>
