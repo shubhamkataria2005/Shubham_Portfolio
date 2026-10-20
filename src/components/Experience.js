@@ -3,17 +3,24 @@ import "./Experience.css";
 
 const SHOW_TODOS = process.env.NODE_ENV !== "production";
 
-// Title, dates and location come from the current CV. Responsibilities are
-// intentionally empty until confirmed — never fill these with guesses.
+// Points come from an audit of my internship contributions (git history,
+// merged pull requests and source). Title, dates and "Remote" come from the
+// CV. Keep internal project names, clients and implementation details out.
 const roles = [
   {
     title: "Full Stack Software Engineer Intern",
     org: "AI Sentinels",
     meta: "Auckland, NZ · Remote",
     dates: "Aug 2026 – Present",
-    points: [],
-    todo:
-      "Add 2–4 verified points about the internship: what you built or shipped, the stack you actually used, and how the team works (code review, sprints, testing).",
+    summary:
+      "Backend development in Python and FastAPI on an AI-assisted platform for processing financial documents.",
+    points: [
+      "Added 11 REST API endpoints in FastAPI with typed Pydantic contracts for invoice processing, including per-field human review, reconciliation, duplicate detection and Excel export of reviewed values.",
+      "Built OCR and multi-model AI extraction with a consensus check: when results disagree a third reader is consulted, and uncertain financial values are flagged for human review instead of being guessed.",
+      "Built tax-document indexing with per-field evidence scoring and plain-language explanations for reviewers, evaluated against accountant-annotated reference documents.",
+      "Traced slow API requests to repeated reloads of a large PostgreSQL JSONB snapshot and added revision-checked caching. Backed my changes with pytest regression tests and shipped them through 21 merged pull requests with senior-engineer code review.",
+    ],
+    stack: ["Python", "FastAPI", "Pydantic", "PostgreSQL", "pytest", "OCR", "OpenRouter"],
   },
 ];
 
@@ -59,6 +66,7 @@ function Experience() {
               <p className="exp-org">
                 {r.org} <span>· {r.meta}</span>
               </p>
+              {r.summary && <p className="exp-summary">{r.summary}</p>}
               {r.points.length > 0 && (
                 <ul className="exp-points">
                   {r.points.map((p) => (
@@ -66,7 +74,14 @@ function Experience() {
                   ))}
                 </ul>
               )}
-              {SHOW_TODOS && r.points.length === 0 && (
+              {r.stack && (
+                <ul className="exp-stack" aria-label="Technologies used">
+                  {r.stack.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              )}
+              {SHOW_TODOS && r.points.length === 0 && r.todo && (
                 <p className="content-todo">TODO (dev only): {r.todo}</p>
               )}
             </div>

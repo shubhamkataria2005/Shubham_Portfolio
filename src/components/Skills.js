@@ -1,21 +1,22 @@
 import React from "react";
 import "./Skills.css";
 
-// Core: used to build and ship my main projects (ServiceCrown, the car dealership).
+// Core: used in my internship (Python, FastAPI) and to build and ship my main
+// projects (ServiceCrown, the car dealership).
 // Familiar: used in smaller projects and coursework.
 const skillTiers = [
   {
     id: "core",
     label: "Core",
-    note: "Used to build and ship my main projects",
+    note: "Used in my internship and to build and ship my main projects",
     categories: [
-      { label: "Languages", skills: ["Java", "JavaScript", "SQL"] },
-      { label: "Backend", skills: ["Spring Boot", "Spring Security (JWT)", "REST APIs", "WebSocket (STOMP)"] },
+      { label: "Languages", skills: ["Java", "Python", "JavaScript", "SQL"] },
+      { label: "Backend", skills: ["Spring Boot", "Spring Security (JWT)", "FastAPI", "Pydantic", "REST APIs", "WebSocket (STOMP)"] },
       { label: "Frontend", skills: ["React", "HTML & CSS", "Vite"] },
       { label: "Data", skills: ["PostgreSQL", "Flyway"] },
-      { label: "Testing", skills: ["JUnit", "Mockito", "Testcontainers", "React Testing Library"] },
+      { label: "Testing", skills: ["JUnit", "Mockito", "Testcontainers", "pytest", "React Testing Library"] },
       { label: "Cloud & delivery", skills: ["AWS (Elastic Beanstalk, RDS, S3, CloudFront)", "GitHub Actions", "Git & GitHub"] },
-      { label: "APIs", skills: ["Stripe", "OpenAI API"] },
+      { label: "APIs", skills: ["Stripe", "OpenAI API", "OpenRouter"] },
     ],
   },
   {
@@ -23,7 +24,7 @@ const skillTiers = [
     label: "Familiar",
     note: "Used in smaller projects and coursework",
     categories: [
-      { label: "Python & ML", skills: ["Python (Flask)", "scikit-learn", "TensorFlow / Keras"] },
+      { label: "ML", skills: ["Flask", "scikit-learn", "TensorFlow / Keras"] },
       { label: "Other cloud", skills: ["Docker", "Azure App Service"] },
     ],
   },

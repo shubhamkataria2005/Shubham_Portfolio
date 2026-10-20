@@ -7,13 +7,13 @@ const PHOTO_SMALL = `${process.env.PUBLIC_URL}/images/profile-280.jpg`;
 const GITHUB_URL = "https://github.com/shubhamkataria2005";
 const LINKEDIN_URL = "https://www.linkedin.com/in/shubham-kataria-2005-/";
 
-const stack = ["Java", "Spring Boot", "React", "AWS"];
+const stack = ["Java", "Spring Boot", "Python", "FastAPI", "React", "AWS"];
 
 const facts = [
   { term: "Based in", detail: "Auckland, New Zealand" },
-  { term: "Studying", detail: "Bachelor of Information Technology, Otago Polytechnic Auckland" },
-  { term: "Graduating", detail: "December 2026 (expected)" },
-  { term: "Building", detail: "ServiceCrown, a live production SaaS" },
+  { term: "Studying", detail: "Bachelor of Information Technology, Otago Polytechnic Auckland · graduating December 2026 (expected)" },
+  { term: "Interning", detail: "Backend development in Python and FastAPI at AI Sentinels" },
+  { term: "Building", detail: "ServiceCrown, a live production SaaS (Java, Spring Boot)" },
 ];
 
 const ArrowIcon = () => (
@@ -56,7 +56,7 @@ function Home() {
             Shubham <span className="accent">Kataria</span>
           </h1>
 
-          <p className="hero-title">Full-Stack Software Engineer</p>
+          <p className="hero-title">Backend &amp; Full-Stack Software Engineer</p>
 
           <ul className="hero-stack" aria-label="Core technologies">
             {stack.map((s) => (
@@ -65,10 +65,11 @@ function Home() {
           </ul>
 
           <p className="hero-intro">
-            I design and build production web software. My main project is
+            I build backend and full-stack software in Java and Python. I'm
+            interning at AI Sentinels, building Python and FastAPI services for
+            AI-assisted document processing, and I'm the sole developer on
             ServiceCrown, a live field-service management SaaS for New Zealand
-            trade businesses, built with a Spring Boot API, a React front end,
-            PostgreSQL and AWS.
+            trade businesses built with Spring Boot, React, PostgreSQL and AWS.
           </p>
 
           <dl className="hero-facts">

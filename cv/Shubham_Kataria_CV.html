@@ -100,7 +100,10 @@
     break-after: avoid;
   }
 
-  .context { margin-top: 3pt; }
+  .context { margin-top: 3pt; break-after: avoid; }
+
+  /* Keep an entry's heading block with at least its first bullet. */
+  li:first-child { break-before: avoid; }
 
   ul {
     margin: 4pt 0 0;
@@ -118,7 +121,7 @@
 
 <header>
   <h1>Shubham Kataria</h1>
-  <p class="headline">Full-Stack Software Engineer | Java, Spring Boot, React, AWS</p>
+  <p class="headline">Graduate Software Engineer | Backend and Full-Stack | Java, Python, React</p>
   <p class="contact">
     Auckland, New Zealand |
     <a href="tel:+64220632005">+64 22 063 2005</a> |
@@ -133,10 +136,9 @@
   <h2>Professional Summary</h2>
   <p>
     Final-year Bachelor of Information Technology student at Otago Polytechnic Auckland (expected
-    graduation December 2026) with hands-on experience building full-stack applications and
-    production SaaS. Sole developer on the codebase of ServiceCrown, a live field-service SaaS for
-    NZ trade businesses built with Java, Spring Boot, PostgreSQL, React and AWS. Seeking graduate
-    or junior backend and full-stack roles.
+    graduation December 2026). Intern at AI Sentinels building Python and FastAPI backend services,
+    and sole developer on the codebase of ServiceCrown, a live SaaS for NZ trade businesses built with
+    Java, Spring Boot, PostgreSQL, React and AWS. Seeking graduate backend and full-stack roles.
   </p>
 </section>
 
@@ -150,14 +152,14 @@
 
 <section class="skills">
   <h2>Technical Skills</h2>
-  <p><strong>Languages:</strong> Java, JavaScript, SQL</p>
-  <p><strong>Backend:</strong> Spring Boot, Spring Security (JWT), REST APIs, WebSocket (STOMP)</p>
+  <p><strong>Languages:</strong> Java, Python, JavaScript, SQL</p>
+  <p><strong>Backend:</strong> Spring Boot, Spring Security (JWT), FastAPI, Pydantic, REST APIs, WebSocket (STOMP)</p>
   <p><strong>Frontend:</strong> React, Vite, HTML, CSS</p>
   <p><strong>Databases:</strong> PostgreSQL, Flyway migrations</p>
   <p><strong>Cloud and DevOps:</strong> AWS (Elastic Beanstalk, RDS, S3, CloudFront), GitHub Actions, Git</p>
-  <p><strong>Testing:</strong> JUnit, Mockito, Testcontainers, React Testing Library</p>
-  <p><strong>APIs and integrations:</strong> Stripe, Xero API, OpenAI API</p>
-  <p><strong>Familiar (smaller projects):</strong> Python (Flask), scikit-learn, TensorFlow/Keras, Docker, Azure App Service</p>
+  <p><strong>Testing:</strong> JUnit, Mockito, Testcontainers, pytest, React Testing Library</p>
+  <p><strong>APIs and integrations:</strong> Stripe, Xero API, OpenAI API, OpenRouter</p>
+  <p><strong>Familiar (smaller projects):</strong> Flask, scikit-learn, TensorFlow/Keras, Docker, Azure App Service</p>
 </section>
 
 <section>
@@ -166,13 +168,19 @@
   <div class="entry keep">
     <h3>Full Stack Software Engineer Intern</h3>
     <p class="meta">AI Sentinels | Auckland, New Zealand (remote) | Aug 2026 – Present</p>
+    <ul>
+      <li>Added 11 REST API endpoints in Python and FastAPI, including typed Pydantic v2 invoice contracts with per-field human review, reconciliation, duplicate detection and reviewed-value Excel export.</li>
+      <li>Implemented OCR and multi-model AI consensus for financial document extraction: disagreements escalate to a third reader, and uncertain values are flagged for human review, never guessed.</li>
+      <li>Built tax working-paper indexing and per-field evidence scoring with readable explanations, evaluated against accountant-annotated references and covered by pytest regression tests.</li>
+      <li>Traced slow API requests to repeated reloads of a large PostgreSQL JSONB snapshot and added revision-checked caching; shipped 21 merged pull requests through senior-engineer code review.</li>
+    </ul>
   </div>
 
   <div class="entry keep">
     <h3>Customer Service Representative (part-time)</h3>
     <p class="meta">Z Energy | Auckland, New Zealand | Feb 2024 – Present</p>
     <ul>
-      <li>Serve customers, process transactions and complete end-of-day cash reconciliation at a busy retail site, alongside full-time study.</li>
+      <li>Customer service, transactions and end-of-day cash reconciliation, alongside full-time study.</li>
     </ul>
   </div>
 </section>
@@ -183,7 +191,7 @@
   <div class="entry">
     <h3>ServiceCrown — Field Service Management SaaS</h3>
     <p class="meta"><a href="https://servicecrown.co.nz">servicecrown.co.nz</a> | Mar 2026 – Present | Sole developer on the codebase</p>
-    <p class="context">Live SaaS for New Zealand trade businesses, operated by SERVICECROWN LIMITED, a registered New Zealand company.</p>
+    <p class="context">Live SaaS for NZ trades, operated by SERVICECROWN LIMITED, a registered New Zealand company.</p>
     <ul>
       <li>Built a job-management platform covering customers, scheduling, quotes, GST invoices, online payments, technician timesheets, job costing and reporting.</li>
       <li>Developed the Java 17 and Spring Boot 3.5 REST API on PostgreSQL, with a Flyway-owned schema (Hibernate validate-only), and a React 19 and Vite front end installable as a PWA.</li>
@@ -198,10 +206,9 @@
     <h3>AI Car Dealership Platform</h3>
     <p class="meta"><a href="https://github.com/shubhamkataria2005/aicar_dealership_backend">github.com/shubhamkataria2005/aicar_dealership_backend</a> | Mar – Jul 2026</p>
     <ul>
-      <li>Built a car marketplace combining private listings with dealership inventory: a Spring Boot REST API secured with Spring Security and JWT role-based access (customer, sales, admin and super admin), and a React 19 front end.</li>
-      <li>Implemented real-time buyer–seller messaging over WebSocket (STOMP), test-drive and service bookings, and a simulated checkout (mock payment mode; no real payments are processed).</li>
-      <li>Integrated an OpenAI GPT-4o-mini chatbot with Pinecone retrieval (RAG), a TensorFlow/Keras CNN image classifier and a scikit-learn Random Forest trade-in valuation model, served as Python Flask APIs on Hugging Face Spaces.</li>
-      <li>Deployed to AWS (Elastic Beanstalk, S3 and CloudFront) in June–July 2026, then migrated hosting to Render.</li>
+      <li>Built a car marketplace combining private listings with dealership inventory: a Spring Boot REST API with Spring Security and JWT role-based access, real-time WebSocket (STOMP) messaging, test-drive bookings, a simulated checkout (mock payment mode; no real payments) and a React 19 front end.</li>
+      <li>Integrated an OpenAI chatbot with Pinecone RAG, a scikit-learn Random Forest trade-in model and a TensorFlow/Keras CNN image classifier, served as Flask APIs on Hugging Face Spaces.</li>
+      <li>Ran on AWS (Elastic Beanstalk, S3 and CloudFront) in June–July 2026 before moving to Render.</li>
     </ul>
   </div>
 
@@ -209,8 +216,7 @@
     <h3>First Step Renovations — Business Website</h3>
     <p class="meta"><a href="https://firststeprenovations.co.nz">firststeprenovations.co.nz</a> | 2026</p>
     <ul>
-      <li>Built and launched a React and Vite marketing site on Netlify for a Palmerston North renovation company, with a Web3Forms enquiry form (validation, error states and honeypot spam protection).</li>
-      <li>Generated LocalBusiness structured data, sitemap, robots.txt and Open Graph tags at build time from one content file; set up the .co.nz domain with canonical 301 redirects and checked colour contrast against WCAG AA.</li>
+      <li>Built and launched a React and Vite marketing site on Netlify for a Palmerston North renovation company: Web3Forms enquiry form with spam protection, LocalBusiness structured data and sitemap generated at build time, canonical 301 redirects and WCAG AA colour contrast.</li>
     </ul>
   </div>
 
@@ -218,8 +224,7 @@
     <h3>Bhavishya Oil — Storefront and Ordering Platform</h3>
     <p class="meta"><a href="https://github.com/shubhamkataria2005/bhavishya_spring_backend">github.com/shubhamkataria2005/bhavishya_spring_backend</a> | 2026</p>
     <ul>
-      <li>Built a React storefront and Spring Boot backend for an Indian mustard-oil brand: product catalogue, orders, distributor enquiries and a JWT-secured admin dashboard with WebSocket messaging.</li>
-      <li>Containerised the backend with Docker and deployed it to Azure App Service through Azure Container Registry and GitHub Actions; the site was later moved to Render.</li>
+      <li>Built a React storefront and Spring Boot backend for an Indian mustard-oil brand (orders, distributor enquiries, JWT-secured admin dashboard); containerised it with Docker and deployed it to Azure App Service via GitHub Actions, later moving it to Render.</li>
     </ul>
   </div>
 </section>
