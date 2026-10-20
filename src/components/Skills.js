@@ -1,55 +1,30 @@
 import React from "react";
 import "./Skills.css";
 
+// Core: used to build and ship my main projects (ServiceCrown, the car dealership).
+// Familiar: used in smaller projects and coursework.
 const skillTiers = [
   {
-    label: "Core — used in my main projects",
+    id: "core",
+    label: "Core",
+    note: "Used to build and ship my main projects",
     categories: [
-      {
-        icon: "⚙️",
-        label: "Backend",
-        skills: ["Java", "Spring Boot", "Spring Security & JWT", "REST APIs", "WebSocket (STOMP)", "JUnit & Testcontainers"],
-      },
-      {
-        icon: "🎨",
-        label: "Frontend",
-        skills: ["React", "JavaScript", "Vite", "React Router", "HTML & CSS", "Responsive Design", "PWA"],
-      },
-      {
-        icon: "🗄️",
-        label: "Data",
-        skills: ["PostgreSQL", "SQL", "Flyway Migrations"],
-      },
-      {
-        icon: "☁️",
-        label: "Cloud & Delivery",
-        skills: ["AWS Elastic Beanstalk", "AWS RDS", "AWS S3", "AWS CloudFront", "GitHub Actions CI/CD", "Git & GitHub"],
-      },
-      {
-        icon: "🔗",
-        label: "Integrations",
-        skills: ["Stripe", "Xero API", "Jobber API", "OpenAI API"],
-      },
+      { label: "Languages", skills: ["Java", "JavaScript", "SQL"] },
+      { label: "Backend", skills: ["Spring Boot", "Spring Security (JWT)", "REST APIs", "WebSocket (STOMP)"] },
+      { label: "Frontend", skills: ["React", "HTML & CSS", "Vite"] },
+      { label: "Data", skills: ["PostgreSQL", "Flyway"] },
+      { label: "Testing", skills: ["JUnit", "Mockito", "Testcontainers", "React Testing Library"] },
+      { label: "Cloud & delivery", skills: ["AWS (Elastic Beanstalk, RDS, S3, CloudFront)", "GitHub Actions", "Git & GitHub"] },
+      { label: "APIs", skills: ["Stripe", "OpenAI API"] },
     ],
   },
   {
-    label: "Familiar — coursework and smaller projects",
+    id: "familiar",
+    label: "Familiar",
+    note: "Used in smaller projects and coursework",
     categories: [
-      {
-        icon: "🤖",
-        label: "AI & Machine Learning",
-        skills: ["Python", "Flask", "TensorFlow / Keras", "scikit-learn", "Pandas", "NumPy", "Pinecone"],
-      },
-      {
-        icon: "🐳",
-        label: "Other Cloud & Tools",
-        skills: ["Docker", "Azure App Service", "Azure Container Registry", "Render", "Netlify", "Hugging Face Spaces"],
-      },
-      {
-        icon: "💻",
-        label: "Other Languages & Databases",
-        skills: ["C#", "R", "MySQL"],
-      },
+      { label: "Python & ML", skills: ["Python (Flask)", "scikit-learn", "TensorFlow / Keras"] },
+      { label: "Other cloud", skills: ["Docker", "Azure App Service"] },
     ],
   },
 ];
@@ -60,33 +35,34 @@ function Skills() {
       <div className="section-label reveal">Technical Skills</div>
       <h2 className="section-title reveal">What I build with</h2>
       <p className="section-sub reveal">
-        Split by depth: the core stack I've used to build and ship my main
-        projects, and tools I've used in coursework and smaller projects.
+        Split by depth: the core stack behind my main projects, and tools I've
+        used in smaller projects and coursework.
       </p>
 
-      {skillTiers.map((tier) => (
-        <div key={tier.label} className="skills-tier">
-          <h3 className="skills-tier-label reveal">{tier.label}</h3>
-          <div className="skills-grid">
-            {tier.categories.map((cat, i) => (
-              <div
-                key={cat.label}
-                className={`skill-category reveal${i % 3 !== 0 ? ` reveal-delay-${i % 3}` : ""}`}
-              >
-                <div className="skill-cat-icon">{cat.icon}</div>
-                <div className="skill-cat-label">{cat.label}</div>
-                <div className="skill-pills">
-                  {cat.skills.map((skill) => (
-                    <span key={skill} className="skill-pill">
-                      {skill}
-                    </span>
-                  ))}
+      <div className="skills-tiers">
+        {skillTiers.map((tier) => (
+          <div key={tier.id} className={`skills-tier tier-${tier.id} reveal`}>
+            <div className="skills-tier-head">
+              <h3 className="skills-tier-label">{tier.label}</h3>
+              <p className="skills-tier-note">{tier.note}</p>
+            </div>
+            <dl className="skills-rows">
+              {tier.categories.map((cat) => (
+                <div key={cat.label} className="skills-row">
+                  <dt>{cat.label}</dt>
+                  <dd>
+                    <ul className="skill-pills">
+                      {cat.skills.map((skill) => (
+                        <li key={skill} className="skill-pill">{skill}</li>
+                      ))}
+                    </ul>
+                  </dd>
                 </div>
-              </div>
-            ))}
+              ))}
+            </dl>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 }

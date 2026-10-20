@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#4F46E5" />
 
@@ -19,11 +21,18 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Shubham Kataria" />
     <meta property="og:locale" content="en_NZ" />
+    <meta property="og:image" content="https://shubhamkataria.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Shubham Kataria, Full-Stack Software Engineer: Java, Spring Boot, React and AWS. Auckland, New Zealand." />
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Shubham Kataria — Full-Stack Software Engineer" />
     <meta name="twitter:description" content="Full-stack software engineer in Auckland, NZ, working with Java, Spring Boot, React and AWS. Built ServiceCrown, a live SaaS for NZ trades. Graduating December 2026." />
+    <meta name="twitter:image" content="https://shubhamkataria.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Shubham Kataria, Full-Stack Software Engineer: Java, Spring Boot, React and AWS. Auckland, New Zealand." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://shubhamkataria.com/" />
@@ -31,7 +40,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <!-- Hero photo (matches the srcset/sizes in Home.js) -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/images/profile-560.jpg" imagesrcset="%PUBLIC_URL%/images/profile-280.jpg 280w, %PUBLIC_URL%/images/profile-560.jpg 560w" imagesizes="(max-width: 900px) 112px, 270px" fetchpriority="high" />
 
     <title>Shubham Kataria — Full-Stack Software Engineer | Auckland, NZ</title>
   </head>
