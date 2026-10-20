@@ -19,7 +19,7 @@ function Navbar() {
     { label: "About",    href: "#about" },
     { label: "Skills",   href: "#skills" },
     { label: "Projects", href: "#projects" },
-    { label: "Awards",   href: "#awards" },
+    { label: "Education", href: "#education" },
     { label: "Contact",  href: "#contact" },
   ];
 

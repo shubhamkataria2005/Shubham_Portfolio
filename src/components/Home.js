@@ -17,17 +17,18 @@ function Home() {
         </h1>
 
         <p className="hero-role">
-          <strong>Software Engineer</strong>
+          <strong>Full-Stack Software Engineer</strong>
           <span className="separator">·</span>
-          AI &amp; Full-Stack Development
+          Java, Spring Boot &amp; React
           <span className="separator">·</span>
           Auckland, NZ
         </p>
 
         <p className="hero-desc">
-          Building intelligent, production-grade applications at the intersection
-          of modern web engineering and machine learning. Currently pursuing BIT
-          at Otago Polytechnic.
+          I build full-stack web applications with Java, Spring Boot and React —
+          including ServiceCrown, a live job-management SaaS for New Zealand
+          trade businesses. Final-year Bachelor of Information Technology
+          student at Otago Polytechnic, graduating December 2026.
         </p>
 
         <div className="hero-actions">
@@ -63,28 +64,16 @@ function Home() {
 
         <div className="hero-stats">
           <div className="stat-block">
-            <div className="stat-num">
-              6<span>+</span>
-            </div>
-            <div className="stat-label">Projects Deployed</div>
+            <div className="stat-num">1</div>
+            <div className="stat-label">Live SaaS Product</div>
           </div>
           <div className="stat-block">
-            <div className="stat-num">
-              3<span>+</span>
-            </div>
-            <div className="stat-label">Years Studying IT</div>
+            <div className="stat-num">2</div>
+            <div className="stat-label">Business Sites Built</div>
           </div>
           <div className="stat-block">
-            <div className="stat-num">
-              20<span>+</span>
-            </div>
-            <div className="stat-label">Technologies</div>
-          </div>
-          <div className="stat-block">
-            <div className="stat-num">
-              2<span>+</span>
-            </div>
-            <div className="stat-label">Cloud Platforms</div>
+            <div className="stat-num">Dec 2026</div>
+            <div className="stat-label">Expected Graduation</div>
           </div>
         </div>
       </div>

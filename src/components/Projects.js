@@ -29,85 +29,90 @@ const ExternalIcon = () => (
   </svg>
 );
 
+const GITHUB = "https://github.com/shubhamkataria2005";
+
 const projects = [
   {
     featured: true,
     tags: [
       { label: "SaaS Product", cls: "tag-ai" },
-      { label: "AWS Cloud", cls: "tag-ml" },
+      { label: "Live", cls: "tag-ml" },
       { label: "★ Featured", cls: "tag-new" },
     ],
-    title: "FieldFlow — Field Service Management SaaS",
+    title: "ServiceCrown — Field Service Management SaaS",
     description:
-      "Production B2B SaaS for NZ trades businesses (plumbers, electricians, HVAC). Managers get a real-time dispatch board with drag-and-drop scheduling; technicians get a dedicated mobile portal for one-tap job updates; customers track progress live via a unique link. Integrates Xero OAuth2 (auto-syncs invoices & contacts with token rotation), Stripe subscription billing (Starter / Pro / Business tiers with webhook enforcement), OpenAI GPT-4o-mini with Pinecone RAG for AI job insights, and Brevo SMTP for automated job-status emails. Generates GST-inclusive branded PDFs for invoices and quotes. PWA-enabled for home-screen installation. Frontend on AWS S3 + CloudFront, backend on Elastic Beanstalk (EC2), database on RDS PostgreSQL — fully automated CI/CD via GitHub Actions.",
+      "A live job-management platform for New Zealand trade and service businesses — plumbers, electricians, HVAC technicians, builders and cleaners. It follows each job from the customer record through scheduling, quote, GST invoice and online payment, with technician timesheets and a payroll-ready CSV export, job costing and reporting. Stripe handles plan subscriptions and lets customers pay quotes and invoices online; Xero receives invoices as drafts, and the Jobber connection is read-only. An AI assistant built on OpenAI tool calling answers from the business's own records, pauses for the owner's confirmation before sensitive actions such as scheduling or sending an invoice, and records every action in an audit log. Spring Boot REST API on PostgreSQL with Flyway migrations, a React front end installable as a PWA, and AWS hosting on Elastic Beanstalk, RDS, S3 and CloudFront. GitHub Actions runs the JUnit and Testcontainers suite before every manually approved production deploy.",
     stack: [
-      "React 19", "Spring Boot 3.1.5", "AWS S3", "AWS CloudFront",
-      "AWS Elastic Beanstalk", "AWS RDS (PostgreSQL)",
-      "Xero OAuth2", "Stripe", "OpenAI GPT-4o-mini", "Pinecone RAG",
-      "WebSocket (STOMP)", "OpenPDF", "PWA", "GitHub Actions",
+      "Java 17", "Spring Boot 3", "Spring Security (JWT)", "PostgreSQL",
+      "Flyway", "React 19", "Vite", "AWS Elastic Beanstalk", "AWS RDS",
+      "AWS S3 + CloudFront", "Stripe", "Xero API", "Jobber API",
+      "OpenAI API", "WebSocket (STOMP)", "JUnit + Testcontainers",
+      "GitHub Actions",
     ],
-    liveUrl: "https://fieldflow.shubhamkataria.com",
-    githubUrl: "https://github.com/shubhamkataria2005",
+    links: [
+      { label: "View Live", url: "https://servicecrown.co.nz", kind: "live" },
+    ],
+    note: "Source code is private",
   },
   {
     featured: false,
     tags: [
-      { label: "AI Platform", cls: "tag-ai" },
+      { label: "Full-Stack", cls: "tag-ai" },
       { label: "Machine Learning", cls: "tag-ml" },
-      { label: "AWS Cloud", cls: "tag-new" },
     ],
     title: "AI Car Dealership Platform",
     description:
-      "Production-grade dual-platform marketplace on AWS — private seller listings meet managed dealership inventory. Features a RAG-powered OpenAI chatbot (GPT-4o-mini + Pinecone), TensorFlow CNN car brand recogniser (10 brands, 150×150px input), Random Forest trade-in valuator trained on 92,661 NZ auto records at 93% accuracy, real-time buyer–seller WebSocket messaging, service appointments, test drive booking, and a multi-role admin panel (Customer / Sales / Admin / Super Admin). ML models deployed as Flask APIs on Hugging Face Spaces and Render. Backend on Elastic Beanstalk (EC2), RDS PostgreSQL, S3 + CloudFront with ACM SSL.",
+      "A car marketplace combining private seller listings with dealership inventory. The Spring Boot API covers JWT authentication with role-based access (customer, sales, admin and super admin), real-time buyer–seller messaging over WebSocket, test-drive and service bookings, and a simulated checkout — payments run in mock mode, so no real money is processed. AI features include an OpenAI GPT-4o-mini chatbot with Pinecone retrieval (RAG), a TensorFlow/Keras CNN image classifier for car photos, and a scikit-learn Random Forest model that estimates trade-in values; both models are served as Python Flask APIs on Hugging Face Spaces. It ran on AWS (Elastic Beanstalk, S3 and CloudFront) in June–July 2026 before moving to Render.",
     stack: [
-      "React 19", "Spring Boot 3.1.5", "AWS EC2", "AWS RDS", "AWS S3",
-      "AWS CloudFront", "AWS ACM", "TensorFlow / Keras",
-      "scikit-learn", "OpenAI GPT-4o-mini", "Pinecone RAG",
-      "Python Flask", "WebSocket", "GitHub Actions",
+      "Java", "Spring Boot", "Spring Security (JWT)", "PostgreSQL",
+      "React 19", "Vite", "WebSocket (STOMP)", "OpenAI API", "Pinecone",
+      "TensorFlow / Keras", "scikit-learn", "Python Flask",
+      "Hugging Face Spaces", "Render",
     ],
-    liveUrl: "https://dealership.shubhamkataria.com",
-    githubUrl: "https://github.com/shubhamkataria2005",
-  },
-  {
-    tags: [
-      { label: "Client Work", cls: "tag-web" },
-      { label: "Local SEO", cls: "tag-ml" },
+    links: [
+      { label: "Backend Repo", url: `${GITHUB}/aicar_dealership_backend`, kind: "repo" },
+      { label: "Frontend Repo", url: `${GITHUB}/AI_car_dealership_frontend`, kind: "repo" },
+      { label: "ML Services Repo", url: `${GITHUB}/ai-chatbot-mlService`, kind: "repo" },
     ],
-    title: "First Step Renovations — Business Website",
-    description:
-      "Marketing site for a Palmerston North renovation company, built and shipped end to end. Static React/Vite on Netlify with no backend — enquiries post to Web3Forms and land directly in the owner's inbox, with client-side validation, send/error states and a hidden spam trap. Custom .co.nz domain with automatic HTTPS and every URL variant 301'd to a single canonical address. Local search handled properly: LocalBusiness structured data carrying the address, phone and opening hours, plus sitemap, robots.txt and Open Graph tags all generated at build time from one content file, so the markup can never drift from the page. Every foreground/background pair contrast-checked to WCAG AA, and a sticky call bar on mobile because most visitors arrive on a phone wanting to ring someone.",
-    stack: [
-      "React 19", "Vite 8", "Netlify", "Web3Forms",
-      "Schema.org JSON-LD", "Google Search Console",
-      "CSS Custom Properties", "GitHub CI/CD",
-    ],
-    liveUrl: "https://firststeprenovations.co.nz",
-    githubUrl: null,
+    note: "Live demo offline — the backend isn't currently running",
   },
   {
     tags: [
       { label: "Business Website", cls: "tag-web" },
-      { label: "Azure Cloud", cls: "tag-ml" },
+      { label: "Local SEO", cls: "tag-ml" },
+    ],
+    title: "First Step Renovations — Business Website",
+    description:
+      "Marketing site for a Palmerston North renovation company, built and shipped end to end. Static React and Vite on Netlify with no backend — enquiries post to Web3Forms and land directly in the owner's inbox, with client-side validation, send and error states and a hidden spam trap. Custom .co.nz domain with automatic HTTPS, and every URL variant 301-redirects to a single canonical address. Local search handled properly: LocalBusiness structured data carrying the address, phone and opening hours, plus sitemap, robots.txt and Open Graph tags all generated at build time from one content file, so the markup can never drift from the page. Every foreground/background colour pair contrast-checked to WCAG AA, and a sticky call bar on mobile because most visitors arrive on a phone wanting to ring someone.",
+    stack: [
+      "React 19", "Vite", "Netlify", "Web3Forms",
+      "Schema.org JSON-LD", "Google Search Console",
+      "CSS Custom Properties", "Continuous Deploy from GitHub",
+    ],
+    links: [
+      { label: "View Live", url: "https://firststeprenovations.co.nz", kind: "live" },
+    ],
+  },
+  {
+    tags: [
+      { label: "Business Platform", cls: "tag-web" },
+      { label: "Spring Boot", cls: "tag-ml" },
     ],
     title: "Bhavishya Oil — Business Platform",
     description:
-      "Full-stack business platform for Bhavishya® Kachi Ghani Mustard Oil (Surender Kala & Sons Pvt. Ltd.). Features a product catalogue for retail (200ml–2L) and wholesale (15L/15kg tin) orders, a distributor enquiry system, real-time admin messaging via WebSocket, JWT-secured admin dashboard with order management and live stats, and an AI chat assistant powered by OpenAI with a RAG knowledge base. Spring Boot backend deployed to Azure App Service via Docker and Azure Container Registry with a fully automated GitHub Actions CI/CD pipeline.",
+      "Storefront and ordering platform built for Bhavishya® Kachi Ghani Mustard Oil (Surender Kala & Sons Pvt. Ltd.), India. Customers browse retail and wholesale packs, place orders and send distributor enquiries; a JWT-secured admin dashboard manages orders, enquiries and sales stats, with real-time messaging over WebSocket. The Spring Boot backend calls OpenAI for a chat assistant, and a separate Python Flask service implements retrieval over a product knowledge base using OpenAI embeddings and Pinecone. The backend was containerised with Docker and deployed to Azure App Service through Azure Container Registry and GitHub Actions; the site now runs on Render.",
     stack: [
-      "React", "Spring Boot 3.1.5", "Python Flask", "PostgreSQL",
-      "Azure App Service", "Azure Container Registry", "Docker",
-      "GitHub Actions", "JWT Auth", "WebSocket (STOMP)", "OpenAI RAG",
+      "Java", "Spring Boot", "Spring Security (JWT)", "PostgreSQL", "React",
+      "WebSocket (STOMP)", "OpenAI API", "Pinecone", "Python Flask",
+      "Docker", "Azure App Service", "Azure Container Registry",
+      "GitHub Actions", "Render",
     ],
-    liveUrl: "https://bhavishya-frontend.onrender.com",
-    githubUrl: null,
-  },
-  {
-    tags: [{ label: "Web App", cls: "tag-web" }],
-    title: "Preloved Product Marketplace",
-    description:
-      "React-based e-commerce platform for buyers and sellers of pre-owned goods. Real-time data sync via Firebase, guest browsing support, and a clean responsive UI built with a focus on UX.",
-    stack: ["React", "Node.js", "Firebase"],
-    liveUrl: "https://preloved-54326--pr42-feature-guest-browsi-ne3jioro.web.app/",
-    githubUrl: null,
+    links: [
+      { label: "View Storefront", url: "https://bhavishya-frontend.onrender.com", kind: "live" },
+      { label: "Backend Repo", url: `${GITHUB}/bhavishya_spring_backend`, kind: "repo" },
+      { label: "Frontend Repo", url: `${GITHUB}/bhavishya_frontend`, kind: "repo" },
+    ],
+    note: "Ordering, admin and chat need the backend, which is currently offline",
   },
 ];
 
@@ -117,8 +122,8 @@ function Projects() {
       <div className="section-label reveal">Projects</div>
       <h2 className="section-title reveal">Things I've shipped</h2>
       <p className="section-sub reveal">
-        From machine learning pipelines to full-stack platforms — real systems
-        deployed for real users.
+        A live SaaS product, a full-stack platform with machine-learning
+        services, and sites built for real businesses.
       </p>
 
       <div className="projects-grid">
@@ -155,29 +160,21 @@ function Projects() {
 
             {/* Footer */}
             <div className="project-footer">
-              {p.liveUrl ? (
-                <a
-                  href={p.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link"
-                >
-                  View Live <ArrowIcon />
-                </a>
-              ) : (
-                <span className="project-note">{p.note || "Coming soon"}</span>
-              )}
+              <div className="project-links">
+                {p.links.map((l) => (
+                  <a
+                    key={l.url}
+                    href={l.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`project-link${l.kind === "repo" ? " secondary" : ""}`}
+                  >
+                    {l.label} {l.kind === "repo" ? <ExternalIcon /> : <ArrowIcon />}
+                  </a>
+                ))}
+              </div>
 
-              {p.githubUrl && (
-                <a
-                  href={p.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link secondary"
-                >
-                  GitHub <ExternalIcon />
-                </a>
-              )}
+              {p.note && <span className="project-note">{p.note}</span>}
             </div>
           </div>
         ))}

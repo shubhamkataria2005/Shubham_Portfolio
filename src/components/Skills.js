@@ -1,46 +1,56 @@
 import React from "react";
 import "./Skills.css";
 
-const skillCategories = [
+const skillTiers = [
   {
-    icon: "💻",
-    label: "Languages",
-    skills: ["Python", "Java", "JavaScript", "C#", "SQL", "R"],
+    label: "Core — used in my main projects",
+    categories: [
+      {
+        icon: "⚙️",
+        label: "Backend",
+        skills: ["Java", "Spring Boot", "Spring Security & JWT", "REST APIs", "WebSocket (STOMP)", "JUnit & Testcontainers"],
+      },
+      {
+        icon: "🎨",
+        label: "Frontend",
+        skills: ["React", "JavaScript", "Vite", "React Router", "HTML & CSS", "Responsive Design", "PWA"],
+      },
+      {
+        icon: "🗄️",
+        label: "Data",
+        skills: ["PostgreSQL", "SQL", "Flyway Migrations"],
+      },
+      {
+        icon: "☁️",
+        label: "Cloud & Delivery",
+        skills: ["AWS Elastic Beanstalk", "AWS RDS", "AWS S3", "AWS CloudFront", "GitHub Actions CI/CD", "Git & GitHub"],
+      },
+      {
+        icon: "🔗",
+        label: "Integrations",
+        skills: ["Stripe", "Xero API", "Jobber API", "OpenAI API"],
+      },
+    ],
   },
   {
-    icon: "🎨",
-    label: "Frontend",
-    skills: ["React 19", "Vite", "React Router", "HTML & CSS", "Framer Motion", "WebSocket (SockJS/STOMP)", "PWA", "Responsive Design"],
-  },
-  {
-    icon: "⚙️",
-    label: "Backend & Databases",
-    skills: ["Spring Boot 3", "Spring Security", "Spring WebFlux", "Node.js", "PostgreSQL", "MySQL", "Firebase", "JWT Auth", "REST API"],
-  },
-  {
-    icon: "🤖",
-    label: "AI & Machine Learning",
-    skills: ["TensorFlow / Keras", "scikit-learn", "OpenAI GPT-4o-mini", "Pinecone (RAG)", "CNN", "Random Forest", "NLP", "Flask", "Pandas", "NumPy"],
-  },
-  {
-    icon: "☁️",
-    label: "Cloud — AWS",
-    skills: ["EC2", "Elastic Beanstalk", "RDS (PostgreSQL)", "S3", "CloudFront", "IAM", "ACM (SSL)", "CloudWatch", "VPC & Security Groups"],
-  },
-  {
-    icon: "🌐",
-    label: "Cloud — Azure & DevOps",
-    skills: ["Azure App Service", "Azure Container Registry", "Docker", "GitHub Actions CI/CD", "Render", "Netlify", "Git LFS"],
-  },
-  {
-    icon: "🔗",
-    label: "Integrations",
-    skills: ["Xero OAuth2 API", "Stripe Payments", "Brevo SMTP", "OpenPDF", "Hugging Face Spaces"],
-  },
-  {
-    icon: "🧠",
-    label: "Concepts & Architecture",
-    skills: ["Multi-Tenant SaaS", "Multi-Role Auth", "Real-Time Messaging", "Microservices", "OOP", "System Design", "Data Structures & Algorithms"],
+    label: "Familiar — coursework and smaller projects",
+    categories: [
+      {
+        icon: "🤖",
+        label: "AI & Machine Learning",
+        skills: ["Python", "Flask", "TensorFlow / Keras", "scikit-learn", "Pandas", "NumPy", "Pinecone"],
+      },
+      {
+        icon: "🐳",
+        label: "Other Cloud & Tools",
+        skills: ["Docker", "Azure App Service", "Azure Container Registry", "Render", "Netlify", "Hugging Face Spaces"],
+      },
+      {
+        icon: "💻",
+        label: "Other Languages & Databases",
+        skills: ["C#", "R", "MySQL"],
+      },
+    ],
   },
 ];
 
@@ -50,28 +60,33 @@ function Skills() {
       <div className="section-label reveal">Technical Skills</div>
       <h2 className="section-title reveal">What I build with</h2>
       <p className="section-sub reveal">
-        A practical toolkit shaped by building real production systems —
-        not just tutorials.
+        Split by depth: the core stack I've used to build and ship my main
+        projects, and tools I've used in coursework and smaller projects.
       </p>
 
-      <div className="skills-grid">
-        {skillCategories.map((cat, i) => (
-          <div
-            key={cat.label}
-            className={`skill-category reveal${i % 3 !== 0 ? ` reveal-delay-${i % 3}` : ""}`}
-          >
-            <div className="skill-cat-icon">{cat.icon}</div>
-            <div className="skill-cat-label">{cat.label}</div>
-            <div className="skill-pills">
-              {cat.skills.map((skill) => (
-                <span key={skill} className="skill-pill">
-                  {skill}
-                </span>
-              ))}
-            </div>
+      {skillTiers.map((tier) => (
+        <div key={tier.label} className="skills-tier">
+          <h3 className="skills-tier-label reveal">{tier.label}</h3>
+          <div className="skills-grid">
+            {tier.categories.map((cat, i) => (
+              <div
+                key={cat.label}
+                className={`skill-category reveal${i % 3 !== 0 ? ` reveal-delay-${i % 3}` : ""}`}
+              >
+                <div className="skill-cat-icon">{cat.icon}</div>
+                <div className="skill-cat-label">{cat.label}</div>
+                <div className="skill-pills">
+                  {cat.skills.map((skill) => (
+                    <span key={skill} className="skill-pill">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 }

@@ -33,6 +33,7 @@
 .stack-item { font-size: 0.75rem; font-weight: 500; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; }
 
 .project-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border); margin-top: auto; gap: 12px; flex-wrap: wrap; }
+.project-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; transition: gap 0.2s ease; }
 .project-link:hover { gap: 10px; }
 .project-link.secondary { color: var(--muted); }

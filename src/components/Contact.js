@@ -40,7 +40,7 @@ const socialLinks = [
     sub: "shubham-kataria-2005-",
   },
   {
-    href: "https://fieldflow.shubhamkataria.com",
+    href: "https://servicecrown.co.nz",
     iconClass: "portfolio",
     icon: (
       <svg
@@ -55,8 +55,8 @@ const socialLinks = [
         <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
       </svg>
     ),
-    label: "FieldFlow",
-    sub: "fieldflow.shubhamkataria.com",
+    label: "ServiceCrown",
+    sub: "servicecrown.co.nz",
   },
 ];
 
@@ -75,9 +75,9 @@ function Contact() {
             together.
           </h2>
           <p className="contact-sub">
-            I'm open to internship opportunities, graduate roles, and
-            interesting project collaborations. Drop me an email — I respond
-            within 24 hours.
+            I'm open to graduate and junior software engineering roles in New
+            Zealand, and interesting project collaborations. Drop me an email —
+            I respond within 24 hours.
           </p>
           <a
             href="mailto:katariashubham0101@gmail.com"
