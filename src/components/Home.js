@@ -66,11 +66,8 @@ function Home() {
 
           <p className="hero-intro">
             I build backend and full-stack software in Java and Python. I'm a
-            Full Stack Software Engineer Intern at AI Sentinels, focused on
-            backend development in Python and FastAPI, and I'm the sole
-            developer on ServiceCrown, a live field-service management SaaS for
-            New Zealand trade businesses built with Spring Boot, React,
-            PostgreSQL and AWS.
+            Full Stack Software Engineer Intern at AI Sentinels and a Full-Stack
+            Developer on ServiceCrown.
           </p>
 
           <dl className="hero-facts">

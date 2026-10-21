@@ -137,7 +137,7 @@
   <p>
     Final-year Bachelor of Information Technology student at Otago Polytechnic Auckland (expected
     graduation December 2026). Intern at AI Sentinels building Python and FastAPI backend services,
-    and sole developer on the codebase of ServiceCrown, a live SaaS for NZ trade businesses built with
+    and developer of ServiceCrown, a live SaaS for NZ trade businesses built with
     Java, Spring Boot, PostgreSQL, React and AWS. Seeking graduate backend and full-stack roles.
   </p>
 </section>
@@ -167,13 +167,15 @@
 
   <div class="entry keep">
     <h3>Full Stack Software Engineer Intern</h3>
-    <p class="meta">AI Sentinels | Auckland, New Zealand (remote) | Aug 2026 – Present</p>
+    <p class="meta">AI Sentinels | Auckland, New Zealand (Remote) | August 2026 – Present</p>
+    <p class="context">Backend-focused software engineering internship involving Python and FastAPI development within a remote engineering team.</p>
     <ul>
-      <li>Develop backend features in Python and FastAPI, building REST API endpoints with typed Pydantic request and response models, input validation and clear error handling.</li>
-      <li>Integrate AI model APIs and PostgreSQL data access into backend services, with a focus on correctness and reliable failure handling.</li>
-      <li>Write automated pytest tests, including regression tests, and investigate and fix backend performance and reliability issues.</li>
-      <li>Deliver changes through pull requests and code review as part of a remote engineering team.</li>
+      <li>Develop REST API endpoints using Python, FastAPI and Pydantic, including input validation and error handling.</li>
+      <li>Integrate AI model APIs and PostgreSQL database operations into backend services.</li>
+      <li>Write automated tests using pytest and investigate backend reliability and performance issues.</li>
+      <li>Contribute code through pull requests and team code reviews.</li>
     </ul>
+    <p class="context"><strong>Technologies:</strong> Python, FastAPI, Pydantic, PostgreSQL, pytest, REST APIs.</p>
   </div>
 
   <div class="entry keep">
@@ -188,18 +190,17 @@
 <section>
   <h2>Selected Engineering Projects</h2>
 
-  <div class="entry">
-    <h3>ServiceCrown — Field Service Management SaaS</h3>
-    <p class="meta"><a href="https://servicecrown.co.nz">servicecrown.co.nz</a> | Mar 2026 – Present | Sole developer on the codebase</p>
-    <p class="context">Live SaaS for NZ trades, operated by SERVICECROWN LIMITED, a registered New Zealand company.</p>
+  <div class="entry keep">
+    <h3>ServiceCrown — Full-Stack SaaS Platform</h3>
+    <p class="meta">Registered New Zealand SaaS Business · Unpaid Development Contribution</p>
+    <p class="context"><strong>Java, Spring Boot, React, PostgreSQL, AWS, Stripe, OpenAI, GitHub Actions</strong></p>
     <ul>
-      <li>Built a job-management platform covering customers, scheduling, quotes, GST invoices, online payments, technician timesheets, job costing and reporting.</li>
-      <li>Developed the Java 17 and Spring Boot 3.5 REST API on PostgreSQL, with a Flyway-owned schema (Hibernate validate-only), and a React 19 and Vite front end installable as a PWA.</li>
-      <li>Enforced tenant isolation by scoping data access to the signed-in business, with dedicated tests proving access across businesses is refused, including through the API and the Xero integration.</li>
-      <li>Made Stripe payments retry-safe: webhook signatures are verified, duplicate and replayed events are ignored, and payment requests carry idempotency keys. Xero receives invoices as one-way drafts.</li>
-      <li>Added an OpenAI tool-calling assistant in which actions such as scheduling a job or sending an invoice require user confirmation and are recorded in an audit log.</li>
-      <li>Deployed on AWS Elastic Beanstalk, RDS, S3 and CloudFront through GitHub Actions: 200+ backend test classes (JUnit, Mockito, Testcontainers) and 100+ front-end test files gate manually approved releases, with migration review and a database snapshot before schema changes.</li>
+      <li>Designed and developed a production SaaS platform for New Zealand trade businesses, covering job scheduling, recurring work, customer intake, quotes, GST invoicing and reporting.</li>
+      <li>Built Stripe Connect payment workflows supporting customer deposits, full upfront payments, online invoice-balance payments and refunds, with webhook verification and idempotency protections.</li>
+      <li>Implemented payroll-ready timesheets, secure field photo evidence, job costing and an AI assistant with confirmation controls and action auditing.</li>
+      <li>Developed secure multi-tenant REST APIs, automated backend and frontend tests, PostgreSQL migrations and AWS deployment pipelines.</li>
     </ul>
+    <p class="context"><strong>Live product:</strong> <a href="https://servicecrown.co.nz">servicecrown.co.nz</a></p>
   </div>
 
   <div class="entry">

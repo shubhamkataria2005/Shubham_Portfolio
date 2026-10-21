@@ -10,10 +10,13 @@ const SHOW_TODOS = process.env.NODE_ENV !== "production";
 const screenshots = [];
 
 const contribution = [
-  "Sole developer on the codebase: I designed and built the Spring Boot API, the React front end and the PostgreSQL schema.",
-  "Set up the AWS hosting and the GitHub Actions pipelines that test, package and deploy each release.",
-  "Integrated Stripe, Xero, Jobber and the OpenAI API, each with a deliberately limited scope.",
-  "Wrote and maintain the automated test suites that every production deploy has to pass.",
+  "Built REST APIs and responsive workflows for customers, jobs, scheduling, recurring jobs, quotes, invoicing, customer intake and technician timesheets.",
+  "Implemented Stripe Connect payment workflows covering account onboarding, upfront payments, deposits, invoice-balance payments, payment status handling and full refunds.",
+  "Developed payroll-ready weekly timesheets with submission, approval, rejection, reopening and CSV export.",
+  "Built field evidence workflows with image validation, secure AWS S3 storage and malware-scanning controls.",
+  "Integrated the OpenAI API to provide an AI assistant that works with business records and requests confirmation before selected sensitive operations.",
+  "Developed job costing, purchase-order workflows, reporting and integrations with Xero and Jobber.",
+  "Configured AWS hosting, database migrations, automated tests and GitHub Actions deployment workflows."
 ];
 
 const stackGroups = [
@@ -21,39 +24,62 @@ const stackGroups = [
   { label: "Frontend", items: ["React 19", "Vite", "React Router", "Installable PWA"] },
   { label: "Data", items: ["PostgreSQL", "Flyway migrations"] },
   { label: "Cloud", items: ["AWS Elastic Beanstalk", "Amazon RDS", "Amazon S3", "Amazon CloudFront"] },
-  { label: "Integrations", items: ["Stripe", "Xero", "Jobber", "OpenAI API"] },
+  { label: "Integrations", items: ["Stripe Connect", "Stripe Billing", "Xero", "Jobber", "OpenAI API"] },
   { label: "Quality", items: ["JUnit", "Mockito", "Testcontainers", "React Testing Library", "GitHub Actions"] },
 ];
 
 const challenges = [
   {
-    title: "Letting an AI assistant act on business data safely",
-    problem:
-      "An assistant that can schedule work or send invoices can do real damage if it acts on a misunderstanding.",
-    approach:
-      "The assistant works through OpenAI tool calling over the business's own records. Sensitive tools — creating or scheduling a job, assigning a technician, creating or converting a quote, creating or sending an invoice — stop and wait for the user to confirm, and every tool call is written to an action log the owner can review.",
+    "title": "AI-assisted operations with human confirmation",
+    "paragraphs": [
+      "The AI assistant uses OpenAI tool calling to interact with business records. Seven sensitive actions require explicit user confirmation: scheduling or completing a job, assigning a technician, creating a quote, converting a quote into a job, and creating or sending an invoice.",
+      "Tool calls are logged for auditing, including read operations, proposed actions and their outcomes."
+    ]
   },
   {
-    title: "Keeping each business's data separate",
-    problem:
-      "Many businesses share one application and database, so no business should ever be able to read or change another's customers, jobs or invoices.",
-    approach:
-      "Data access is scoped to the signed-in business, and dedicated tests check that cross-business reads, edits and references are refused — including through the API and the accounting integration.",
+    "title": "Secure multi-tenant architecture",
+    "paragraphs": [
+      "Backend APIs enforce business-level data isolation so authenticated users cannot access or modify another business's records. Security testing includes attempts to access records across business boundaries.",
+      "Authentication uses Spring Security and JWT, while integration credentials are encrypted at rest."
+    ]
   },
   {
-    title: "Payments and integrations that don't double-count",
-    problem:
-      "Payment webhooks can arrive more than once, and accounting data must stay consistent across systems.",
-    approach:
-      "Stripe webhook signatures are verified, duplicate events are ignored and payment requests carry idempotency keys, so a retry can't charge or record twice. Integrations are deliberately one-directional — Xero receives invoices as drafts and Jobber is read-only — so ServiceCrown stays the source of truth. Xero OAuth tokens are encrypted at rest.",
+    "title": "Payment reliability",
+    "paragraphs": [
+      "Stripe Connect enables businesses to accept payments through their connected accounts. Payment workflows include webhook signature verification, duplicate-event handling and idempotency protections.",
+      "Customers can pay the full amount upfront, pay a fixed or percentage-based deposit, or pay the remaining invoice balance online. The implemented refund workflow supports full refunds."
+    ]
   },
   {
-    title: "Changing the schema without breaking production",
-    problem:
-      "A bad migration on a live database is hard to undo, and issued invoices must not change after the fact.",
-    approach:
-      "Flyway owns the schema and Hibernate only validates it. CI runs the migrations and integration tests against real PostgreSQL in Testcontainers, and production deploys are manual: a release with a migration needs a reviewed migration and a database snapshot first. GST amounts are snapshotted on quotes and invoices so later settings changes can't alter issued documents.",
+    "title": "Database and deployment reliability",
+    "paragraphs": [
+      "Flyway manages database schema migrations, while Hibernate validates the schema. Backend tests include PostgreSQL integration tests using Testcontainers.",
+      "GitHub Actions runs automated checks on pushes and pull requests to main. Production releases use manually initiated deployment workflows, with database migration review and backup procedures."
+    ]
+  }
+];
+
+const integrations = [
+  {
+    "label": "Stripe Connect",
+    "detail": "Connected-account onboarding, customer payments, deposits, invoice-balance payments and full refunds."
   },
+  {
+    "label": "Stripe Billing",
+    "detail": "SaaS subscriptions and plan management."
+  },
+  {
+    "label": "OpenAI API",
+    "detail": "AI assistant with tool calling, confirmation controls and audit logging."
+  },
+  {
+    "label": "Xero",
+    "detail": "Accounting integration that exports invoices as drafts."
+  },
+  {
+    "label": "Jobber",
+    "detail": "Read-only integration implemented in the application."
+  }
 ];
 
 const architecture = [
@@ -93,13 +119,14 @@ function ServiceCrown() {
   return (
     <section id="servicecrown" className="sc">
       <div className="section-label reveal">Featured Project</div>
-      <h2 className="section-title reveal">ServiceCrown</h2>
+      <h2 className="section-title reveal">ServiceCrown — Full-Stack SaaS Platform</h2>
       <p className="sc-lead reveal">
-        Field service management SaaS for New Zealand trade businesses.
+        Full-Stack SaaS Platform | Live Product
       </p>
 
       <ul className="sc-meta reveal">
         <li className="sc-status">Live</li>
+        <li>Full-Stack Software Development — Unpaid Contribution</li>
         <li>Operated by SERVICECROWN LIMITED, a registered New Zealand company</li>
         <li>Source code is private</li>
       </ul>
@@ -107,15 +134,10 @@ function ServiceCrown() {
       <div className="sc-overview">
         <div className="sc-card reveal">
           <h3 className="sc-heading">The product</h3>
-          <p>
-            ServiceCrown is job-management software for New Zealand plumbers,
-            electricians, HVAC technicians, builders and cleaners. It follows each
-            job from the customer record through scheduling, quote, GST invoice and
-            online payment, with technician timesheets and a payroll-ready export,
-            job costing and reporting. It's live and open for sign-up with a
-            15-day trial.
-          </p>
+          <p>{"ServiceCrown is a live field service management SaaS platform for New Zealand trade businesses. It helps businesses manage customer enquiries, scheduling, recurring jobs, quotes, GST invoices, online payments, technician timesheets and operational reporting in one application."}</p>
+          <p>{"The platform supports customer quote acceptance through secure links, Stripe Connect payments for full upfront amounts or deposits, online invoice-balance payments and full refunds. It also includes field photo evidence, payroll-ready timesheet exports, job costing, purchase orders, supplier receiving and profitability reporting."}</p>
           <h3 className="sc-heading">My contribution</h3>
+          <p>{"I designed and developed ServiceCrown across its React frontend, Spring Boot backend and PostgreSQL database."}</p>
           <ul className="sc-list">
             {contribution.map((c) => (
               <li key={c}>{c}</li>
@@ -143,13 +165,20 @@ function ServiceCrown() {
               </div>
             ))}
           </dl>
-          <p className="sc-quality">
-            200+ backend test classes (JUnit and Mockito, with PostgreSQL integration
-            tests in Testcontainers) and 100+ front-end test files run in GitHub
-            Actions before any production deploy.
-          </p>
+          <h3 className="sc-heading">Product integrations</h3>
+          <dl>
+            {integrations.map((integration) => (
+              <div key={integration.label} className="sc-stack-row">
+                <dt>{integration.label}</dt>
+                <dd>{integration.detail}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="sc-quality">{"The project includes more than 200 backend test classes and more than 100 frontend test files, covering application workflows, security, payment handling and database integration."}</p>
         </div>
       </div>
+
+      <p className="sc-lead reveal">{"Live at https://servicecrown.co.nz. Public registration is open, with a 15-day Business-plan trial. Feature access depends on the selected subscription plan."}</p>
 
       {screenshots.length > 0 ? (
         <div className="sc-gallery reveal">
@@ -188,8 +217,8 @@ function ServiceCrown() {
           ))}
         </ol>
         <p className="sc-delivery">
-          <strong>Delivery:</strong> GitHub Actions runs the test suites on every
-          push; a manually approved job then deploys the API to Elastic Beanstalk
+          <strong>Delivery:</strong> GitHub Actions runs the test suites on pushes and pull requests to
+          main; a manually initiated workflow deploys the API to Elastic Beanstalk
           and the front end to S3 and CloudFront.
         </p>
         <figcaption>
@@ -203,14 +232,9 @@ function ServiceCrown() {
         {challenges.map((c, i) => (
           <article key={c.title} className={`sc-challenge reveal${i % 2 ? " reveal-delay-1" : ""}`}>
             <h4>{c.title}</h4>
-            <p className="sc-problem">
-              <span>Problem</span>
-              {c.problem}
-            </p>
-            <p className="sc-approach">
-              <span>Approach</span>
-              {c.approach}
-            </p>
+            {c.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </article>
         ))}
       </div>

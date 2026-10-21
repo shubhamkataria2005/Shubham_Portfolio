@@ -3,24 +3,21 @@ import "./Experience.css";
 
 const SHOW_TODOS = process.env.NODE_ENV !== "production";
 
-// Title, dates and remote arrangement are confirmed. The description is
-// deliberately high-level (role, technologies, API work, testing, teamwork)
-// until publishing more detail about the internship is approved: no product
-// domain, implementation methods, vendors or contribution counts.
+// Approved public internship wording.
 const roles = [
   {
     title: "Full Stack Software Engineer Intern",
     org: "AI Sentinels",
-    meta: "Auckland, NZ · Remote",
-    dates: "Aug 2026 – Present",
+    meta: "Auckland, New Zealand (Remote)",
+    dates: "August 2026 – Present",
     summary:
-      "Backend-focused internship, building Python and FastAPI services in a remote engineering team.",
+      "Backend-focused software engineering internship involving Python and FastAPI development within a remote engineering team.",
     points: [
-      "Develop REST API endpoints in Python and FastAPI with typed Pydantic models, input validation and clear error handling.",
-      "Integrate AI model APIs and PostgreSQL data access into backend services, with attention to correctness and failure handling.",
-      "Write automated pytest tests, including regression tests, and investigate and fix backend performance and reliability issues.",
-      "Deliver changes through pull requests and code review as part of a remote team.",
-    ],
+      "Develop REST API endpoints using Python, FastAPI and Pydantic, including input validation and error handling.",
+      "Integrate AI model APIs and PostgreSQL database operations into backend services.",
+      "Write automated tests using pytest and investigate backend reliability and performance issues.",
+      "Contribute code through pull requests and team code reviews."
+] ,
     stack: ["Python", "FastAPI", "Pydantic", "PostgreSQL", "pytest", "REST APIs"],
   },
 ];

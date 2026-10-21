@@ -33,5 +33,5 @@ After changing the CV, check it is still two A4 pages: `pdfinfo public/Shubham_K
 ## Deployment
 
 - GitHub Pages serves the `gh-pages` branch at the custom domain in `public/CNAME`.
-- Pushing to `main` does **not** deploy. `npm run deploy` publishes whatever is in `build/` at that moment.
+- Pushing to `main` does **not** deploy. `npm run deploy` automatically runs `predeploy` to rebuild the checked-out source, then publishes the resulting `build/` directory to `gh-pages`.
 - **Rollback:** redeploy an earlier commit. Check it out, run `npm ci`, then `npm run deploy`. Alternatively, revert the latest commit on the `gh-pages` branch.

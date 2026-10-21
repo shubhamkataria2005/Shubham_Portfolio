@@ -81,7 +81,7 @@ function Contact() {
             experienced team and keep shipping production software.
           </p>
           <p className="contact-sub">
-            Email is the best way to reach me. I respond within 24 hours.
+            Email is the best way to reach me.
           </p>
           <a
             href="mailto:katariashubham0101@gmail.com"
