@@ -6,7 +6,7 @@ const SHOW_TODOS = process.env.NODE_ENV !== "production";
 const degree = {
   title: "Bachelor of Information Technology",
   org: "Otago Polytechnic Auckland",
-  date: "2024 – Expected December 2026",
+  date: "2024 – Expected graduation: December 2026",
   description: "Final-year student, expecting to complete the degree in December 2026.",
   todo:
     "Optionally add 3–5 relevant papers from your transcript, e.g. software engineering, databases, cloud.",

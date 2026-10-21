@@ -11,7 +11,7 @@ const stack = ["Java", "Spring Boot", "Python", "FastAPI", "React", "AWS"];
 
 const facts = [
   { term: "Based in", detail: "Auckland, New Zealand" },
-  { term: "Studying", detail: "Bachelor of Information Technology, Otago Polytechnic Auckland · graduating December 2026 (expected)" },
+  { term: "Studying", detail: "Bachelor of Information Technology, Otago Polytechnic Auckland · Expected graduation: December 2026" },
   { term: "Interning", detail: "Backend development in Python and FastAPI at AI Sentinels" },
   { term: "Building", detail: "ServiceCrown, a live production SaaS (Java, Spring Boot)" },
 ];
