@@ -1,30 +1,54 @@
 .home {
   min-height: 100vh; display: flex; align-items: center;
-  padding: 140px 6% 100px; background: var(--bg); position: relative; overflow: hidden;
+  padding: calc(var(--nav-h) + 64px) var(--gutter) 88px;
+  background: var(--bg); position: relative; overflow: hidden;
 }
-.hero-glow { position: absolute; top: -150px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 70%); pointer-events: none; }
+.hero-glow { position: absolute; top: -150px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 70%); pointer-events: none; }
 .hero-glow2 { position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%); pointer-events: none; }
-.hero-inner { position: relative; z-index: 1; max-width: 1100px; width: 100%; }
 
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); border: 1px solid rgba(5,150,105,0.22); background: rgba(5,150,105,0.07); padding: 6px 16px; border-radius: 100px; margin-bottom: 32px; animation: heroFadeUp 0.6s ease both; }
+.hero-inner {
+  position: relative; z-index: 1; width: 100%;
+  display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 56px; align-items: center;
+}
+
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); border: 1px solid rgba(4,120,87,0.25); background: rgba(4,120,87,0.06); padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; animation: heroFadeUp 0.5s ease both; }
 .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: badgePulse 2s infinite; flex-shrink: 0; }
 @keyframes badgePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
 
-.hero-name { font-family: var(--font-display); font-size: clamp(3.8rem, 9vw, 8.5rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; color: var(--text); animation: heroFadeUp 0.6s 0.1s ease both; }
+.hero-name { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.6rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; color: var(--text); animation: heroFadeUp 0.5s 0.05s ease both; }
 .hero-name .accent { color: var(--accent); font-style: italic; display: block; }
 
-.hero-role { font-size: clamp(0.95rem, 2vw, 1.15rem); font-weight: 400; color: var(--muted); margin-top: 28px; margin-bottom: 20px; animation: heroFadeUp 0.6s 0.2s ease both; }
-.hero-role strong { color: var(--text); font-weight: 600; }
-.hero-role .separator { margin: 0 10px; color: var(--border2); }
+.hero-title { font-family: var(--font-body); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-top: 26px; animation: heroFadeUp 0.5s 0.1s ease both; }
 
-.hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 520px; line-height: 1.8; margin-bottom: 44px; animation: heroFadeUp 0.6s 0.3s ease both; }
+.hero-stack { display: flex; flex-wrap: wrap; align-items: center; margin-top: 8px; font-size: clamp(1rem, 1.6vw, 1.15rem); font-weight: 600; color: var(--accent); animation: heroFadeUp 0.5s 0.12s ease both; }
+.hero-stack li + li::before { content: '·'; margin: 0 10px; color: var(--border2); }
 
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: heroFadeUp 0.6s 0.4s ease both; }
+.hero-intro { font-size: 1.05rem; color: var(--text2); max-width: 600px; line-height: 1.8; margin-top: 22px; animation: heroFadeUp 0.5s 0.15s ease both; }
 
-.hero-stats { display: flex; gap: 52px; flex-wrap: wrap; margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border); animation: heroFadeUp 0.6s 0.5s ease both; }
-.stat-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 900; color: var(--text); letter-spacing: -0.04em; line-height: 1; }
-.stat-num span { color: var(--accent); }
-.stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.1em; }
+.hero-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; max-width: 640px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); animation: heroFadeUp 0.5s 0.2s ease both; }
+.hero-fact dt { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.hero-fact dd { font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.5; margin-top: 2px; }
 
-@keyframes heroFadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-@media(max-width:600px){ .hero-stats{gap:28px;padding-top:32px;margin-top:48px} .stat-num{font-size:2.2rem} }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; animation: heroFadeUp 0.5s 0.25s ease both; }
+.hero-actions .btn-primary { padding: 14px 24px; }
+.hero-actions .btn-ghost { padding: 13px 18px; }
+
+/* No entrance animation: the photo is often the LCP element. */
+.hero-photo { position: relative; }
+.hero-photo::before { content: ''; position: absolute; inset: -4px; border-radius: calc(var(--r-lg) + 4px); background: linear-gradient(135deg, var(--accent), var(--accent2)); opacity: 0.18; }
+.hero-photo img { position: relative; width: 100%; height: auto; aspect-ratio: 560 / 674; object-fit: cover; border-radius: var(--r-lg); }
+
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 900px) {
+  .home { min-height: 0; padding-top: calc(var(--nav-h) + 40px); }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-photo { order: -1; width: 112px; margin-bottom: 24px; }
+  .hero-photo::before { inset: -3px; border-radius: 22px; }
+  .hero-photo img { border-radius: 20px; }
+}
+
+@media (max-width: 560px) {
+  .hero-facts { grid-template-columns: 1fr; }
+  .hero-actions .btn-primary { width: 100%; justify-content: center; }
+}
